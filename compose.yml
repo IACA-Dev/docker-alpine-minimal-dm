@@ -1,0 +1,14 @@
+services:
+  dm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DISPLAY=:0
+      - XAUTHORITY=/mnt/xauthority.d/Xauthority
+    volumes:
+      - /tmp/:/mnt/xauthority.d
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev:/dev
+    stdin_open: true
+    tty: true
