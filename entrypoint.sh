@@ -1,7 +1,14 @@
 #!/bin/bash
 
-echo "Welcome IACA Desktop manager minimal image !"
+handle_ctrl_c() {
+    echo "CTRL+C detected. Exiting..."
+    exit 0
+}
 
-openbox & > /dev/null
+trap handle_ctrl_c SIGINT
 
-pcmanfm --desktop
+echo "Press CTRL+C to exit..."
+
+while true; do
+    sleep 1
+done
